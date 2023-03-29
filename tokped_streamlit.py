@@ -81,7 +81,7 @@ st.plotly_chart(fig4)
 
 st.write('### Percentage people who interested in hampers lebaran according to the province: ')
 dfg = gpd.read_file('Data/indo.geojson')
-df_w = pd.read_csv('websuche_unterrgn.csv',skiprows=2)
+df_w = pd.read_csv('Data/websuche_unterrgn.csv',skiprows=2)
 dfg = dfg.merge(df_w, on='Propinsi', how='left')
 m = dfg.explore(tooltip=['Propinsi', 'perc'])
 st_folium(m, width=700, height=400)
